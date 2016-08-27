@@ -13,6 +13,7 @@ data =  {"setting_type":"greeting",
 				 "greeting":{"text":"Welcome to My Company!"}
 			  }
 r = requests.post('https://graph.facebook.com/v2.6/me/thread_settings?access_token='+PAT, data = data, headers = headers)
+print r
 
 
 @app.route('/', methods=['GET'])
