@@ -10,7 +10,7 @@ PAT = 'EAATzMKDsoGABAATp2oqMOQPa09zVkZARPYCbBPTaGkwbDEigzRZBOTXZAqXscZApLLAfq3Ym
 
 headers = {'content-type':'application/json'}
 data =  {'setting_type':'greeting', 'greeting':{'text':'Welcome to My Company!'}}
-url = 'https://graph.facebook.com/v2.6/me/thread_settings?access_token='+PA
+url = 'https://graph.facebook.com/v2.6/me/thread_settings?access_token='+PAT
 r = requests.post(url, json=data, headers=headers)
 print r.status_code
 
