@@ -8,6 +8,13 @@ app = Flask(__name__)
 # by the Facebook App that will be created.
 PAT = 'EAATzMKDsoGABAATp2oqMOQPa09zVkZARPYCbBPTaGkwbDEigzRZBOTXZAqXscZApLLAfq3YmIoVmtGnCJbTWDhZBVpVJK3MFR4CCzscWZBxHyl2iegZBc9xSkLneXJmQ4qrPyR922HbOPWZAv2mv7ZAZBsC4hS30u3euTeA3lVIAXrOgZDZD'
 
+headers = {'content-type': 'application/json'}
+data =  {"setting_type":"greeting",
+				 "greeting":{"text":"Welcome to My Company!"}
+			  }
+r = requests.post('https://graph.facebook.com/v2.6/me/thread_settings?access_token='+PAT, data = data, headers = headers)
+
+
 @app.route('/', methods=['GET'])
 def handle_verification():
   print "Handling Verification."
